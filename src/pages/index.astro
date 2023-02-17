@@ -1,5 +1,53 @@
 ---
+import { Picture } from "@astrojs/image/components";
 import Base from "@layouts/Base.astro";
+import RecentPosts from "@components/RecentPosts.astro";
 ---
 
-<Base title="Welcome">Hello World</Base>
+<Base title="A [D]evs Life">
+  <div class="hero min-h-min bg-base-200 rounded-xl">
+    <div class="hero-content flex-col lg:flex-row">
+      <div class="avatar">
+        <div class="w-40 rounded-xl mask mask-hexagon">
+          <Picture
+            src={"/imgs/portrait.jpg"}
+            fit={"inside"}
+            widths={[400, 600]}
+            sizes="(max-width: 400px) 400px, (max-width: 600px) 600px"
+            aspectRatio="3:5"
+            alt="image"
+          />
+        </div>
+      </div>
+      <h1 class="text-5xl font-bold inline-flex">
+        Hello
+        <span class="animate-wave text-5xl mx-auto">👋</span>
+      </h1>
+      <div class="flex flex-col prose">
+        <p class="m-0">
+          Hey! Im Andrew a fullstack developer based in London, welcome to my
+          portolio and blog!
+        </p>
+        <div class="divider"></div>
+        <div class="flex flex-row">
+          <span class="mx-auto">
+            💻 Currently working on replatforming
+            <a
+              rel="noreferrer"
+              class="no-underline text-orange-50"
+              target="_blank"
+              href="https://www.selfridges.com/GB/en/"
+            >
+              Selfridges
+            </a>
+          </span>
+          <span class="mx-auto">Reach out on ...</span>
+          <span class="mx-auto">Follow me on ...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h1 class="text-3xl">Recent Posts</h1>
+  <RecentPosts />
+</Base>

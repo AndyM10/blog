@@ -1,0 +1,26 @@
+---
+import type { BlogPostFrontmatter } from "@types";
+import type { MarkdownInstance } from "astro";
+import PostCard from "./PostCard.astro";
+
+type Post = MarkdownInstance<BlogPostFrontmatter>;
+let posts = await Astro.glob<BlogPostFrontmatter>("../pages/posts/*.md");
+
+posts = posts.sort((a: Post, b: Post) => {
+  if (a.frontmatter.date > b.frontmatter.date) {
+    return -1;
+  }
+  if (a.frontmatter.date < b.frontmatter.date) {
+    return 1;
+  }
+  return 0;
+});
+
+if (import.meta.env.PROD) {
+  posts = posts.filter((post) => !post.frontmatter.draft);
+}
+---
+
+<div class="flex flex-row flex-wrap">
+  {posts.map((post) => <PostCard title={post.frontmatter.title} />)}
+</div>
