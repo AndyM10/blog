@@ -21,6 +21,13 @@ if (import.meta.env.PROD) {
 }
 ---
 
-<div class="flex flex-row flex-wrap">
-  {posts.map((post) => <PostCard title={post.frontmatter.title} />)}
+<div class="flex flex-row flex-wrap max-w-screen">
+  {
+    posts.map((post) => (
+      <PostCard
+        title={post.frontmatter.title}
+        thumbnail={post.frontmatter.thumbnail}
+      />
+    ))
+  }
 </div>

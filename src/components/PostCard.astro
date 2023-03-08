@@ -1,9 +1,25 @@
 ---
+import { Picture } from "@astrojs/image/components";
+
 interface Props {
   title: string;
+  thumbnail: string;
 }
 
-const { title } = Astro.props;
+const { title, thumbnail } = Astro.props;
 ---
 
-<div>{title}</div>
+<div class="max-w-md mr-auto flex flex-col bg-base-200 rounded-lg my-1">
+  <div class="p-5">
+    <Picture
+      class="mb-2"
+      src={`/imgs/${thumbnail}.jpg`}
+      widths={[400, 600, 1024]}
+      sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, 1024px"
+      aspectRatio="5:3"
+      alt="image"
+    />
+
+    {title}
+  </div>
+</div>

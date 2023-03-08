@@ -1,6 +1,7 @@
 ---
 layout: '../../layouts/BlogPost.astro'
 title: 'My Third Blog'
+thumbnail: 'blog3'
 date: 2023-01-14
 ---
 

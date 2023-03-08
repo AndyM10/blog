@@ -2,6 +2,7 @@
 layout: '../../layouts/BlogPost.astro'
 title: 'My Second Blog'
 date: 2023-02-14
+thumbnail: 'blog2'
 draft: true
 ---
 

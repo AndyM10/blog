@@ -7,7 +7,7 @@ import RecentPosts from "@components/RecentPosts.astro";
 <Base title="A [D]evs Life">
   <div class="hero min-h-min bg-base-200 rounded-xl">
     <div class="hero-content flex-col lg:flex-row">
-      <div class="avatar">
+      <div class="avatar flex-col flex items-center">
         <div class="w-40 rounded-xl mask mask-hexagon">
           <Picture
             src={"/imgs/portrait.jpg"}
@@ -18,9 +18,10 @@ import RecentPosts from "@components/RecentPosts.astro";
             alt="image"
           />
         </div>
+        <h2 class="text-lg">Andrew Morrison</h2>
       </div>
       <h1 class="text-5xl font-bold inline-flex">
-        Hello
+        Hello!
         <span class="animate-wave text-5xl mx-auto">👋</span>
       </h1>
       <div class="flex flex-col prose">
